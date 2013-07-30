@@ -1,0 +1,27 @@
+{
+  "name": "up-clone",
+  "version": "0.0.1",
+  "description": "Clones prototypes",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/basicdays/clone.git"
+  },
+  "keywords": [
+    "node",
+    "component",
+    "clone",
+    "prototypes",
+    "objects"
+  ],
+  "author": "basicdays",
+  "license": "mit",
+  "readmeFilename": "Readme.md",
+  "gitHead": "58ad3ce9191c6412d22f50aabc1ce9af7dd91f8d",
+  "bugs": {
+    "url": "https://github.com/basicdays/clone/issues"
+  }
+}
