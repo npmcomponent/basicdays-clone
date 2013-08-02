@@ -18,10 +18,14 @@
     "objects"
   ],
   "author": "basicdays",
-  "license": "mit",
+  "license": "MIT",
   "readmeFilename": "Readme.md",
   "gitHead": "58ad3ce9191c6412d22f50aabc1ce9af7dd91f8d",
   "bugs": {
     "url": "https://github.com/basicdays/clone/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0",
+    "should": "~1.2.2"
   }
 }
