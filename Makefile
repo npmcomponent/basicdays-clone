@@ -1,14 +1,19 @@
-
 build: components index.js
 	@component build --dev
 
 components: component.json
 	@component install --dev
 
-test:
+lint:
+	@./node_modules/.bin/jshint **/*.js
+
+test: lint
 	@./node_modules/.bin/mocha --reporter list
 
 clean:
-	@rm -fr build components template.js
+	@rm -fr build components docs template.js
 
-.PHONY: test clean
+doc:
+	@jsdoc -d ./docs ./index.js
+
+.PHONY: lint test clean doc

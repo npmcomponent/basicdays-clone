@@ -1,3 +1,23 @@
 {
-    "node": true
+	"camelcase": true,
+	"curly": true,
+	"immed": true,
+	"latedef": "nofunc",
+	"newcap": true,
+	"noarg": true,
+	"undef": true,
+	"unused": true,
+	"strict": true,
+	"trailing": true,
+
+	"debug": true,
+	"globalstrict": true,
+	"multistr": true,
+	"smarttabs": true,
+
+	"node": true,
+	"globals": {
+		"describe": true,
+		"it": true
+	}
 }
