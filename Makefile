@@ -13,7 +13,7 @@ test: lint
 clean:
 	@rm -fr build components docs template.js
 
-doc:
-	@jsdoc -d ./docs ./index.js
+docs:
+	@jsdoc -d ./docs ./index.js ./lib
 
-.PHONY: lint test clean doc
+.PHONY: lint test clean docs
