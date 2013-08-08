@@ -4,7 +4,9 @@
   "description": "Clones prototypes",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "component/type": "*"
+  },
   "development": {},
   "license": "MIT",
   "main": "index.js",
