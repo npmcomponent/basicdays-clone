@@ -3,6 +3,14 @@
 require('should');
 var clone = require('../');
 
+describe('clone()', function() {
+	it('should return a cloner', function() {
+		var cloner = clone();
+		cloner.should.be.ok;
+		cloner.from.should.be.ok;
+	});
+});
+
 describe('clone(string)', function() {
 	it('should pass back', function() {
 		var stub = 'the dude';
@@ -63,15 +71,27 @@ describe('clone(array)', function() {
 		subject.should.eql(stub);
 		subject.should.not.equal(stub);
 
-		subject[0] = 10;
+		subject[0] = 42;
 		subject.should.not.eql(stub);
 		subject.should.not.equal(stub);
 	});
 
-	it('should clone array contents', function() {
+	it('should clone array contents by value by default', function() {
 		var stub = [new Date(2013, 8, 1)];
 
 		var subject = clone(stub);
+		subject.should.eql(stub);
+		subject.should.not.equal(stub);
+
+		subject[0].setFullYear(1990);
+		stub[0].should.eql(new Date(1990, 8, 1));
+		subject[0].should.eql(new Date(1990, 8, 1));
+	});
+
+	it('should clone array contents if includeArray is set', function() {
+		var stub = [new Date(2013, 8, 1)];
+
+		var subject = clone().includeArrays.from(stub);
 		subject.should.eql(stub);
 		subject.should.not.equal(stub);
 
@@ -144,7 +164,7 @@ describe('clone(object)', function() {
 			subject.nums.should.not.equal(stub.nums);
 		});
 
-		it('should clone date arrays in an object', function() {
+		it('should clone date arrays in an object by value', function() {
 			var stub = {
 				times: [new Date(2013, 8, 1)]
 			};
@@ -154,7 +174,7 @@ describe('clone(object)', function() {
 			subject.times.should.not.equal(stub.times);
 
 			subject.times[0].setFullYear(1990);
-			stub.times[0].should.eql(new Date(2013, 8, 1));
+			stub.times[0].should.eql(new Date(1990, 8, 1));
 			subject.times[0].should.eql(new Date(1990, 8, 1));
 		});
 
@@ -191,7 +211,7 @@ describe('clone(object)', function() {
 			var stub2 = Object.create(stub1);
 			stub2.foo = 'bar';
 
-			var subject2 = clone(stub2, true);
+			var subject2 = clone().includeInheritance.from(stub2, true);
 			subject2.should.eql(stub2);
 			subject2.should.not.equal(stub2);
 
@@ -217,7 +237,7 @@ describe('clone(object)', function() {
 			StubClass2.prototype.funky2 = function() {};
 			var newObject = new StubClass2();
 
-			var newSubject = clone(newObject, true);
+			var newSubject = clone().includeInheritance.from(newObject, true);
 
 			newSubject.constructor.should.equal(StubClass2);
 			newSubject.should.eql(newObject);
