@@ -11,6 +11,7 @@
 	"trailing": true,
 
 	"debug": true,
+	"expr": true,
 	"globalstrict": true,
 	"multistr": true,
 	"smarttabs": true,

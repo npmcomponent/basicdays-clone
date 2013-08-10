@@ -1,16 +1,17 @@
 {
-  "name": "clone",
-  "repo": "basicdays/clone",
-  "description": "Clones prototypes",
-  "version": "0.0.1",
-  "keywords": [],
-  "dependencies": {
-    "component/type": "*"
-  },
-  "development": {},
-  "license": "MIT",
-  "main": "index.js",
-  "scripts": [
-    "index.js"
-  ]
+	"name": "clone",
+	"repo": "basicdays/clone",
+	"description": "Clones prototypes",
+	"version": "0.0.1",
+	"keywords": [],
+	"dependencies": {
+		"component/type": "*"
+	},
+	"development": {},
+	"license": "MIT",
+	"main": "index.js",
+	"scripts": [
+		"index.js",
+		"lib/clone.js"
+	]
 }
