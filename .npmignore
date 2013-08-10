@@ -1,0 +1,8 @@
+.idea
+build
+components
+docs
+node_modules
+test
+component.json
+Makefile
