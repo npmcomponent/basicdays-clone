@@ -1,28 +1,11 @@
 {
-	"name": "up-clone",
-	"version": "0.0.1",
-	"description": "Clones prototypes",
-	"keywords": [
-		"clone",
-		"prototype",
-		"object",
-		"array",
-		"component"
-	],
-	"bugs": "https://github.com/basicdays/clone/issues",
-	"license": "MIT",
-	"author": "Paul Sanchez <paul@basicdays> (http://basicdays.com)",
-	"main": "index.js",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/basicdays/clone.git"
-	},
-	"dependencies": {
-		"type-component": "~0.0.1"
-	},
-	"devDependencies": {
-		"mocha": "~1.12.0",
-		"should": "~1.2.2",
-		"jshint": "~2.1.8"
-	}
+  "name": "basicdays-clone",
+  "description": "Clones prototypes",
+  "version": "0.0.1",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "component-type": "git://github.com/npmcomponent/component-type.git"
+  },
+  "license": "MIT"
 }
